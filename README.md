@@ -4,7 +4,7 @@
 
 **Project overview and documentation for MealBridge Sri Lanka - a real-time food donation platform. This repo contains only project details and demo links, no source code.**
 
-🌐 **Live Demo**: [mealbridge.madhushan.me](https://mealbridge.madhushan.me/)
+🌐 **Live Demo**: [mealbridge.lk](https://mealbridge.lk/)
 
 MealBridge is a modern, real-time platform designed to reduce food waste and hunger by connecting food donors (individuals, restaurants, businesses) with recipients (NGOs, communities, and individuals) and volunteer delivery agents, through an easy digital system.
 

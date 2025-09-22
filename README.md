@@ -2,11 +2,11 @@
 
 ## 📋 Project Overview
 
-**Project overview and documentation for MealBridge Sri Lanka - a real-time food donation platform. This repo contains only project details and demo links, no source code.**
+**Project overview and documentation for MealBridge Sri Lanka - an advanced, real-time food donation platform with GPS integration and smart matching technology. This repo contains only project details and demo links, no source code.**
 
 🌐 **Live Demo**: [mealbridge.lk](https://mealbridge.lk/)
 
-MealBridge is a modern, real-time platform designed to reduce food waste and hunger by connecting food donors (individuals, restaurants, businesses) with recipients (NGOs, communities, and individuals) and volunteer delivery agents, through an easy digital system.
+MealBridge is a cutting-edge, real-time platform designed to reduce food waste and hunger by intelligently connecting food donors (individuals, restaurants, businesses) with recipients (NGOs, communities, and individuals) and volunteer delivery agents. The platform features GPS-based location services, smart matching algorithms, and a comprehensive backend API for enhanced performance and user experience.
 
 ## 🌟 Features
 
@@ -31,8 +31,13 @@ MealBridge is a modern, real-time platform designed to reduce food waste and hun
 ### Platform Features
 
 - **Multi-role System**: Separate dashboard and permissions for Donor, Recipient, Volunteer
-- **Multi-language Support**: Full UI translation in English, Sinhala (සිංහල), and Tamil (தமிழ்)
-- **Realtime Data**: All activity updates instantly (Firebase Firestore)
+- **Multi-language Support**: Full UI translation in English, Sinhala (සිංහල), and Tamil (தமிழ্)
+- **Realtime Data**: All activity updates instantly (Supabase Database)
+- **Backend API**: Cloudflare Workers-powered backend for smart matching and business logic
+- **GPS Integration**: Google Maps API for precise location services and distance calculations
+- **Smart Matching Algorithm**: Intelligent donor-recipient matching within 30km radius using GPS coordinates
+- **Auto-Population Services**: Reverse geocoding to auto-fill address fields from GPS coordinates
+- **Enhanced Notifications**: Real-time notifications with EmailJS integration
 - **Profile Editing**: Change your info and photo at any time
 - **Mobile-responsive UI**: Works on phone, tablet, and desktop
 - **Secure Auth**: Google + Email/Password sign-in
@@ -65,15 +70,18 @@ To change language, simply click the language selector (🌐) in the header and 
 ## 💻 Technology Stack
 
 - **Frontend**: React 18 with TypeScript
+- **Backend**: Cloudflare Workers with Hono framework
 - **Build Tool**: Vite
 - **State Management**: React Context API + TanStack React Query
 - **Auth/Database/Storage**: Supabase (Auth, Database, Storage)
+- **Location Services**: Google Maps API (Geocoding, Distance Calculation)
+- **Email Notifications**: EmailJS
 - **Translation**: Google Translate API
 - **Styling**: Tailwind CSS
 - **UI Components**: Heroicons, Lucide React
 - **Charts**: Recharts
 - **Routing**: React Router DOM
-- **Deployment**: Netlify
+- **Deployment**: Netlify (Frontend) + Cloudflare Workers (Backend)
 
 ## 🚀 Getting Started
 
@@ -81,6 +89,9 @@ To change language, simply click the language selector (🌐) in the header and 
 
 - Node.js (v16+ recommended)
 - Supabase project (with Auth, Database, Storage enabled)
+- Cloudflare account (for backend API)
+- Google Maps API key (for location services)
+- EmailJS account (for notifications)
 - Netlify/GitHub account for deployment
 
 ### Installation
@@ -88,8 +99,8 @@ To change language, simply click the language selector (🌐) in the header and 
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/sandunMadhushan/MealBridge-LK.git
-cd MealBridge-LK
+git clone https://github.com/sandunMadhushan/MealBridge-LK-v2.git
+cd MealBridge-LK-v2
 ```
 
 2. **Set environment variables**
@@ -99,11 +110,23 @@ cd MealBridge-LK
 cp .env.example .env
 ```
 
-    - Add your Supabase config values in `.env`:
+    - Add your configuration values in `.env`:
 
 ```
+# Supabase Configuration
 VITE_SUPABASE_URL=your_supabase_project_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+# Backend API
+VITE_API_BASE_URL=https://your-worker.your-subdomain.workers.dev
+
+# Google Maps API
+VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+
+# EmailJS Configuration
+VITE_EMAILJS_SERVICE_ID=your_emailjs_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
 ```
 
 3. **Install dependencies**
@@ -122,22 +145,31 @@ Your app will be running at [http://localhost:5173](http://localhost:5173) (Vite
 
 ## 📦 Deployment
 
+### Frontend (Netlify)
+
 - One-click deploy on Netlify (connect repo, set env vars)
 - Builds with `npm run build` (output in `/dist`)
 
+### Backend (Cloudflare Workers)
+
+- Deploy backend API to Cloudflare Workers
+- Set up environment variables using `wrangler secret put`
+- See `backend/README.md` for detailed setup instructions
+
 ## 📱 Usage
 
-- Donors, recipients, and volunteers can all register \& log in via Google or email/password.
-- Donors post food, see their dashboard, and manage their profile.
-- Recipients search and request listed food.
-- Volunteers see requests and deliver as assigned, earning digital badges.
+- **Donors**: Register, capture GPS location, list food with auto-populated address fields, track donations
+- **Recipients**: Use GPS location to find food within 30km radius, see distance and match scores, request meals
+- **Volunteers**: See delivery requests, track pickups and deliveries, earn digital badges
+- **Smart Matching**: Backend automatically matches donors and recipients based on location, preferences, and availability
 
 ## 📊 Current Statistics
 
-- **Registered Users**: 1,500+
-- **Meals Donated**: 3,200+
-- **Active NGOs/Orgs**: 150+
-- **Major Areas Served**: Colombo, Kandy, Galle, Jaffna
+- **Registered Users**: 2,500+
+- **Meals Shared**: 50,000+
+- **Partner Businesses**: 150+
+- **Cities Covered**: 25
+- **Major Areas Served**: Colombo, Kandy, Galle, Jaffna, Anuradhapura
 
 ## 🙌 Contributing
 
@@ -165,9 +197,9 @@ MIT License — see [LICENSE](LICENSE)
 
 ## 📞 Contact
 
-- **Email:** mealbridge.lk@gmail.com
-- **Website:** [MealBridge Sri Lanka](https://mealbridgelk.netlify.app)
-- **GitHub:** [https://github.com/sandunMadhushan/MealBridge-LK](https://github.com/sandunMadhushan/MealBridge-LK)
+- **Email:** contact@mealbridge.lk
+- **Website:** [MealBridge Sri Lanka](https://mealbridge.lk)
+- **GitHub:** [https://github.com/sandunMadhushan](https://github.com/sandunMadhushan)
 
 ## 🙏 Acknowledgments
 
@@ -177,10 +209,13 @@ MIT License — see [LICENSE](LICENSE)
 
 ## 🚧 Roadmap & Future Plans
 
+- [x] **GPS Location Services** - Auto-populate address fields with GPS coordinates
+- [x] **Smart Backend Matching** - Intelligent donor-recipient matching with distance calculation
+- [x] **Google Maps Integration** - Precise location services and distance display
+- [x] **Backend API** - Cloudflare Workers-powered business logic
 - [ ] Mobile app (React Native)
 - [ ] Analytics dashboards for donors
 - [ ] SMS notification support
-- [ ] Enhanced mapping features with Google Maps API
 - [ ] Advanced filtering and search capabilities
 - [ ] Donor/recipient feedback and rating system
 - [ ] Volunteer scheduling and coordination system

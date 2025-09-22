@@ -83,79 +83,6 @@ To change language, simply click the language selector (🌐) in the header and 
 - **Routing**: React Router DOM
 - **Deployment**: Netlify (Frontend) + Cloudflare Workers (Backend)
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js (v16+ recommended)
-- Supabase project (with Auth, Database, Storage enabled)
-- Cloudflare account (for backend API)
-- Google Maps API key (for location services)
-- EmailJS account (for notifications)
-- Netlify/GitHub account for deployment
-
-### Installation
-
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/sandunMadhushan/MealBridge-LK-v2.git
-cd MealBridge-LK-v2
-```
-
-2. **Set environment variables**
-   - Copy the example file:
-
-```bash
-cp .env.example .env
-```
-
-    - Add your configuration values in `.env`:
-
-```
-# Supabase Configuration
-VITE_SUPABASE_URL=your_supabase_project_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-
-# Backend API
-VITE_API_BASE_URL=https://your-worker.your-subdomain.workers.dev
-
-# Google Maps API
-VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
-
-# EmailJS Configuration
-VITE_EMAILJS_SERVICE_ID=your_emailjs_service_id
-VITE_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
-VITE_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
-```
-
-3. **Install dependencies**
-
-```bash
-npm install
-```
-
-4. **Start the development server**
-
-```bash
-npm run dev
-```
-
-Your app will be running at [http://localhost:5173](http://localhost:5173) (Vite's default port)
-
-## 📦 Deployment
-
-### Frontend (Netlify)
-
-- One-click deploy on Netlify (connect repo, set env vars)
-- Builds with `npm run build` (output in `/dist`)
-
-### Backend (Cloudflare Workers)
-
-- Deploy backend API to Cloudflare Workers
-- Set up environment variables using `wrangler secret put`
-- See `backend/README.md` for detailed setup instructions
-
 ## 📱 Usage
 
 - **Donors**: Register, capture GPS location, list food with auto-populated address fields, track donations
@@ -171,7 +98,7 @@ Your app will be running at [http://localhost:5173](http://localhost:5173) (Vite
 - **Cities Covered**: 25
 - **Major Areas Served**: Colombo, Kandy, Galle, Jaffna, Anuradhapura
 
-##  License
+## License
 
 **All Rights Reserved** © 2025 Sandun Madhushan
 

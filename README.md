@@ -171,21 +171,7 @@ Your app will be running at [http://localhost:5173](http://localhost:5173) (Vite
 - **Cities Covered**: 25
 - **Major Areas Served**: Colombo, Kandy, Galle, Jaffna, Anuradhapura
 
-## 🙌 Contributing
-
-1. Fork the repo
-2. Create a feature branch (`git checkout -b feature/my-feature`)
-3. Commit changes (`git commit -m "Add my feature"`)
-4. Push to your branch (`git push origin feature/my-feature`)
-5. Open a Pull Request!
-
-**Development Guidelines**
-
-- Follow code style in the project
-- Use clear commit messages
-- Add/update docs for all significant feature additions
-
-## 📜 License
+##  License
 
 **All Rights Reserved** © 2025 Sandun Madhushan
 
